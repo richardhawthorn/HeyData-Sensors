@@ -1,0 +1,32 @@
+//complete the following details and rename this file to connection_details.h
+
+//Connection details
+const char* ssid     = "your_ssid";
+const char* password = "your_password";
+const char* host = "heydata.co.uk";
+const char* token = "your_token";
+
+//Define Sensors
+//SensorBit
+#define sensor_temp true
+#define sensor_humid false
+#define sensor_humid_temp false
+#define sensor_light false
+#define sensor_pressure false
+
+//SimpleSensor
+#define sensor_temp_simple false
+#define sensor_humid_simple false //needs temp_simple to be enabled
+#define sensor_light_simple false
+
+//define ids
+#define temp_id 1
+#define humid_id 2
+#define light_id 3
+#define pressure_id 4
+
+//serial debug mode?
+#define debug true
+
+//how often shall we report values, in minutes
+#define period 1

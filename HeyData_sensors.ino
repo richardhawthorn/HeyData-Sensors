@@ -143,6 +143,8 @@ void sendValue(int id, float value){
   dtostrf(value, 5, 2, value_char);
   value_string = value_char;
 
+  value_string.trim();
+
   #if debug
     Serial.print("connecting to ");
     Serial.println(host);

@@ -143,8 +143,6 @@ void sendValue(int id, float value){
   dtostrf(value, 5, 2, value_char);
   value_string = value_char;
 
-  value_string.trim();
-
   #if debug
     Serial.print("connecting to ");
     Serial.println(host);
@@ -269,7 +267,7 @@ void checkSimpleTempHumid(){
     float value_humid = dht.readHumidity();
     float value_temp = dht.readTemperature();
     
-    if (value_temp < 999){
+    if (!isnan(value_temp)){
       sendValue(temp_id, value_temp);
        #if debug
         Serial.print("Temperature value:");
@@ -278,7 +276,7 @@ void checkSimpleTempHumid(){
     }
 
     #if sensor_humid_simple
-      if (value_humid < 999){
+      if (!isnan(value_humid)){
          sendValue(humid_id, value_humid);
          #if debug
           Serial.print("Humidity value:");
